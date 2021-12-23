@@ -7,5 +7,7 @@ module.exports = app => {
 
     router.get("/", reservation.findAllByRestaurant);
 
+    router.get("/customer/:customer_id", reservation.findAllByCustomer)
+
     app.use('/api/reservation', router);
 };

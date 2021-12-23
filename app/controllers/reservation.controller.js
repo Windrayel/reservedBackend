@@ -1,4 +1,5 @@
 const db = require("../models");
+const {findAll} = require("./restaurant_controller");
 const Reservation = db.reservation;
 const Op = db.Sequelize.Op;
 
@@ -51,3 +52,21 @@ exports.findAllByRestaurant = (req, res) => {
             });
         });
 };
+
+exports.findAllByCustomer = (req, res) => {
+    Reservation.findAll({where: {customer_id: req.params.customer_id}})
+        .then(data => {
+            if (data) {
+                res.send(data);
+            } else {
+                res.status(404).send({
+                    message: `Customer does not exist`
+                });
+            }
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: 'Some error in reservation.findAllByRestaurant()'
+            });
+        });
+}

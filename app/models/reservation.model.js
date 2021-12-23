@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const model = sequelize.define("model", {
+    const reservation = sequelize.define("reservation", {
         customer_id: {
             type: Sequelize.INTEGER
         },
@@ -10,12 +10,12 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER
         },
         begin_time: {
-            type: Sequelize.TIMESTAMP
+            type: Sequelize.DATE
         },
         end_time: {
-            type: Sequelize.TIMESTAMP
+            type: Sequelize.DATE
         }
     });
 
-    return model;
+    return reservation;
 };

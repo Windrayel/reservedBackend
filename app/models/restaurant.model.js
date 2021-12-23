@@ -17,6 +17,12 @@ module.exports = (sequelize, Sequelize) => {
         },
         end_work: {
             type: Sequelize.TIME
+        },
+        picture: {
+            type: Sequelize.STRING
+        },
+        map_picture: {
+            type: Sequelize.STRING
         }
     });
 

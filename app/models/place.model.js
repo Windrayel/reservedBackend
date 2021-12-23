@@ -5,7 +5,10 @@ module.exports = (sequelize, Sequelize) => {
         },
         people_number: {
             type: Sequelize.INTEGER
-        }
+        },
+        inner_id: {
+            type: Sequelize.INTEGER
+        },
     });
     return place;
 };

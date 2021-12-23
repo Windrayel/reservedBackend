@@ -3,9 +3,9 @@ module.exports = app => {
 
     var router = require("express").Router();
 
-    router.post("/", place.create);
+    // router.post("/", place.create);
 
-    router.get("/", place.findOne);
+    router.get("/", place.findAllByRestId);
 
     app.use('/api/place', router);
 };
